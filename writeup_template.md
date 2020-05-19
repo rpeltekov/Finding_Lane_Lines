@@ -11,7 +11,8 @@ The goals / steps of this project are the following:
 [//]: # (Image References)
 
 [image1]: ./examples/grayscale.jpg "Grayscale"
-
+[image2]: ./examples/line-segments-example.jpg "hough transform lines overlay"
+[image3]: ./examples/laneLines_thirdPass.jpg "averaged lane lines"
 ---
 
 ### Reflection
@@ -22,9 +23,10 @@ My pipeline consisted of 5 steps. First, I converted the images to grayscale, th
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by getting average slope of the each line output from the hough transform. I then throw out any erroneous slope that is known to not be an edge of a lane line. Then, I split average out the right and left lane slopes by splitting by the sign of the slope. Afterwards, using the average centers of the right and left lanes, I determing the average y-intercept to complete the equations of the two average lane lines. I then form the lines and draw them onto the image. 
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
-
+Below are three images that describe parts of the process:
 ![alt text][image1]
+![alt text][image2]
+![alt text][image3]
 
 
 ### 2. Potential shortcomings with current pipeline
